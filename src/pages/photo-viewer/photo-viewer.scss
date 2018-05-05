@@ -1,0 +1,21 @@
+page-photo-viewer {
+  ion-content {
+    background: rgba(0, 0, 0, 0.9) !important;
+  }
+  .toolbar-background-ios {
+    background: rgba(0, 0, 0, 0.9) !important;
+  }
+  .toolbar-title-ios {
+    color: #fafafa !important;
+  }
+  .pager {
+    color: #fafafa !important;
+  }
+
+  .scroll-content {
+    overflow-y: hidden;
+  }
+  .bar-button-default-ios {
+    color: #fafafa;
+  }
+}

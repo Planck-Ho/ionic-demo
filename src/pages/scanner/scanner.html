@@ -1,0 +1,15 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleLight()">
+        <ion-icon [name]="qrScannerStatus?.lightEnabled ? 'ios-sunny':'ios-sunny-outline'"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content no-scroll no-bounce>
+
+  <div class="qrscanner">
+    <div class="through-line"></div>
+  </div>
+</ion-content>

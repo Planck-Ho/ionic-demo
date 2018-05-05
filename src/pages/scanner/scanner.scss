@@ -1,0 +1,66 @@
+page-scanner {
+  ion-content,
+  body,
+  .app-root,
+  ion-app,
+  .scroll-content,
+  .fixed-content,
+  page-app,
+  .qrscanner-content {
+    background: none transparent !important;
+  }
+  .header-ios .toolbar-background-ios,
+  .toolbar-background-md,
+  .toolbar-background-wp {
+    border-style: none;
+    background: none;
+    border-color: rgba(0, 0, 0, 0)
+  }
+  .scroll-content {
+    margin-top: 0 !important; // padding-top: 44px;
+  }
+
+  .qrscanner {
+    margin-top: -44px;
+    width: 100vw;
+    height: calc(100vh + 44px);
+    background: transparent;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.7);
+    border-left-width: 25vw;
+    border-right-width: 25vw;
+    border-top-width: 65vw;
+    border-bottom-width: calc(100vh + 44px - 115vw);
+    position: relative;
+  }
+  .through-line {
+    left: 0;
+    width: 50vw;
+    height: 2px;
+    background: red;
+    position: absolute;
+    animation: myfirst 4s linear infinite alternate;
+  }
+  @keyframes myfirst {
+    0% {
+      background: red;
+      top: 0;
+    }
+    25% {
+      background: yellow;
+      top: 12.5vw;
+    }
+    50% {
+      background: blue;
+      top: 25vw;
+    }
+    75% {
+      background: green;
+      top: 37.5vw;
+    }
+    100% {
+      background: red;
+      top: 50vw;
+    }
+  }
+}
