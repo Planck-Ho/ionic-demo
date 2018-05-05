@@ -13,6 +13,7 @@ import { IsDebug } from '@ionic-native/is-debug';
 import { Camera } from '@ionic-native/camera';
 import { ImageResizer } from '@ionic-native/image-resizer';
 import { QRScanner } from '@ionic-native/qr-scanner';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 //native插件
 const NATIVE = [
@@ -21,8 +22,8 @@ const NATIVE = [
   IsDebug,
   Camera,
   ImageResizer,
-  QRScanner
-
+  QRScanner,
+  ScreenOrientation
 ];
 
 
