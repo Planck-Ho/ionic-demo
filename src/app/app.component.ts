@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ToolService } from '../core/common/tool.service';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { MobileAccessibility } from '@ionic-native/mobile-accessibility';
 
 @Component({
   templateUrl: 'app.html'
@@ -16,8 +17,9 @@ export class MyApp {
     platform: Platform,
     statusBar: StatusBar,
     splashScreen: SplashScreen,
-    private toolService: ToolService,
-    private screenOrientation: ScreenOrientation
+    toolService: ToolService,
+    screenOrientation: ScreenOrientation,
+    mobileAccessibility: MobileAccessibility
   ) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -27,11 +29,13 @@ export class MyApp {
 
 
 
-      if (this.toolService.isDevice()) {
+      if (toolService.isDevice()) {
 
+        // 锁定字体缩放
+        mobileAccessibility.usePreferredTextZoom(false);
 
         // 锁定竖屏
-        this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT_PRIMARY);
+        screenOrientation.lock(screenOrientation.ORIENTATIONS.PORTRAIT_PRIMARY);
 
 
       }

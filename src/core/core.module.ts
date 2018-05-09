@@ -14,6 +14,8 @@ import { Camera } from '@ionic-native/camera';
 import { ImageResizer } from '@ionic-native/image-resizer';
 import { QRScanner } from '@ionic-native/qr-scanner';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { MobileAccessibility } from '@ionic-native/mobile-accessibility';
+
 
 //native插件
 const NATIVE = [
@@ -23,7 +25,8 @@ const NATIVE = [
   Camera,
   ImageResizer,
   QRScanner,
-  ScreenOrientation
+  ScreenOrientation,
+  MobileAccessibility
 ];
 
 
