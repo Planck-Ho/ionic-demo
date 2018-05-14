@@ -22,8 +22,6 @@
     "@angular/platform-browser": "5.2.10",
     "@angular/platform-browser-dynamic": "5.2.10",
     "@capacitor/android": "^1.0.0-alpha.37",
-    "@capacitor/cli": "^1.0.0-alpha.37",
-    "@capacitor/core": "^1.0.0-alpha.37",
     "@capacitor/ios": "^1.0.0-alpha.37",
     "@ionic-native/camera": "^4.7.0",
     "@ionic-native/core": "4.7.0",
