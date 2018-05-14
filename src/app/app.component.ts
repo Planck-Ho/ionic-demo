@@ -37,7 +37,6 @@ export class MyApp {
         // 锁定竖屏
         screenOrientation.lock(screenOrientation.ORIENTATIONS.PORTRAIT_PRIMARY);
 
-
       }
 
     });
