@@ -1,0 +1,18 @@
+calendar {
+  .calendar-head {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: (100vw / 7 / 2);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    border-bottom: 2px solid color($colors, primary);
+    >li {
+      width: (100vw / 7);
+      text-align: center;
+      color: #c3c3c3;
+    }
+  }
+}

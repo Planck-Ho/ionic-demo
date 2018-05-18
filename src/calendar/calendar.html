@@ -1,0 +1,25 @@
+<ul class="calendar-head" *ngIf="startWeekDay !== 'Monday'">
+  <li>日</li>
+  <li>一</li>
+  <li>二</li>
+  <li>三</li>
+  <li>四</li>
+  <li>五</li>
+  <li>六</li>
+</ul>
+<ul class="calendar-head" *ngIf="startWeekDay === 'Monday'">
+  <li>一</li>
+  <li>二</li>
+  <li>三</li>
+  <li>四</li>
+  <li>五</li>
+  <li>六</li>
+  <li>日</li>
+</ul>
+<div *ngIf="!!dates.length">
+  <ion-slides [initialSlide]="1" (ionSlidePrevEnd)="changePage(-1)" (ionSlideNextEnd)="changePage(1)">
+    <ion-slide *ngFor="let item of dates">
+      <calendar-month [schedules]="schedules" [dateMonth]="item" [startWeekDay]="startWeekDay" (onSelect)="select($event)"></calendar-month>
+    </ion-slide>
+  </ion-slides>
+</div>

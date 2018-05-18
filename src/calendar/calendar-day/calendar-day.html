@@ -1,0 +1,4 @@
+<div class="calendar-day" [ngClass]="{'isCurrentMonth':isCurrentMonth,'isSelectDay':isSelectDay}" tappable (click)="select();$event.stopPropagation();">
+  <span [ngClass]="{'isToday':isToday}">{{date | date:'d'}}</span>
+  <b [hidden]="!haveSchedule"></b>
+</div>

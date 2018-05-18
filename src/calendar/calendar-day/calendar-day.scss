@@ -1,0 +1,41 @@
+calendar-day {
+  .calendar-day {
+    width: (100vw / 7);
+    height: (100vw / 7);
+    border-left: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    background: #f7f7f7;
+    color: #c3c3c3;
+    font-size: 1.4rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 300ms;
+    >b {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: color($colors, primary);
+    }
+  }
+  .isToday {
+    color: color($colors, primary);
+    font-weight: bold;
+  }
+  .isCurrentMonth {
+    background: #fff;
+    color: #000;
+  }
+  div.isSelectDay {
+    background: color($colors, primary);
+    border-color: color($colors, primary);
+    >span{
+      color: #fff;
+    }
+  }
+}

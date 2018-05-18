@@ -1,0 +1,3 @@
+<div class="calendar" *ngIf="!!dateMonth">
+  <calendar-day *ngFor="let date of dates" [schedules]="schedules" [currentDate]="dateMonth" [date]="date" (onSelect)="changeDate($event)"></calendar-day>
+</div>

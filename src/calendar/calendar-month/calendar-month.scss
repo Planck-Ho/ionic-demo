@@ -1,0 +1,9 @@
+calendar-month {
+  .calendar {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    // margin-left: -1px;
+    border-bottom: 2px solid color($colors, primary);
+  }
+}
