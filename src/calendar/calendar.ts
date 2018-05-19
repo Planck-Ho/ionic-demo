@@ -136,6 +136,7 @@ export class CalendarComponent implements OnInit, ControlValueAccessor {
       return;
     };
 
+
     // 复制当前日历数据
     const dates = [];
     for (const m of this.dates) {
@@ -145,18 +146,21 @@ export class CalendarComponent implements OnInit, ControlValueAccessor {
 
     this.dates = [];
 
+    this.slides.update();
 
-    for (const date of dates) {
+    for (let i = 0; i < dates.length; i++) {
 
-      const month = date.month() + page;
-      const day = this.isSelect ? this.selectDay : 1;
-      date.set({ month, date: day });
+      const month = dates[i].month() + page;
+      const day = this.isSelect && i === 1 ? this.selectDay : 1;
+
+      dates[i].set({ month, date: day });
 
     }
 
+
     this.dates = dates;
 
-    this.slides.update(300);
+    this.slides.update(200);
 
     this.currentDate = this.dates[1].format('YYYY-MM-DD');
 
@@ -192,7 +196,15 @@ export class CalendarComponent implements OnInit, ControlValueAccessor {
 
 
       // 选择上个月或下一月
-      currentDate.isAfter(date) ? this.slides.slidePrev(300) : this.slides.slideNext(300);
+      if (currentDate.isAfter(date)) {
+
+        this.dates[0].set({ date: this.selectDay });
+        this.slides.slidePrev(300);
+
+      } else {
+        this.dates[2].set({ date: this.selectDay });
+        this.slides.slideNext(300);
+      }
 
     } else {
 

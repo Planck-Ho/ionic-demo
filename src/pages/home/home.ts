@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
+import moment from 'moment';
 
 
 @IonicPage()
@@ -8,6 +9,8 @@ import { IonicPage } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
+
+  date: string;
 
   constructor(
   ) {
@@ -20,6 +23,11 @@ export class HomePage {
 
 
 
+  }
+
+
+  today() {
+    this.date = moment().format('YYYY-MM-DD');
   }
 
 

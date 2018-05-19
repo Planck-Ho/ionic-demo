@@ -1,7 +1,12 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>home</ion-title>
+    <ion-buttons start>
+        <button ion-button (click)="today()">
+            今天
+          </button>
+    </ion-buttons>
+    <ion-title>{{date}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -9,7 +14,7 @@
 
 <ion-content>
 
-  <calendar></calendar>
+  <calendar [(ngModel)]="date"></calendar>
 
 
 </ion-content>
