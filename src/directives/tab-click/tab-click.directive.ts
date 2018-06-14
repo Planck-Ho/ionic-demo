@@ -3,7 +3,7 @@ import { Tab } from 'ionic-angular';
 
 
 @Directive({
-  selector: '[tab-click]'
+  selector: 'ion-tab[tab-click]'
 })
 export class TabClickDirective implements AfterViewInit {
 

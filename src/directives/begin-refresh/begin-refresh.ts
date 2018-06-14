@@ -3,7 +3,7 @@ import { Refresher, ViewController, Content } from 'ionic-angular';
 
 // 主动下拉刷新指令
 @Directive({
-  selector: '[begin-refresh]' // Attribute selector
+  selector: 'ion-refresher[begin-refresh]' // Attribute selector
 })
 export class BeginRefreshDirective implements OnInit {
 

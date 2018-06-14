@@ -5,7 +5,7 @@ import { TextInput } from 'ionic-angular';
 
 
 @Directive({
-  selector: '[auto-focus]' // Attribute selector
+  selector: 'input[auto-focus],ion-input[auto-focus]' // Attribute selector
 })
 export class AutoFocusDirective implements OnInit, OnDestroy {
 

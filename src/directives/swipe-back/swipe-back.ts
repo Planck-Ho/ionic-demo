@@ -4,7 +4,7 @@ import { Gesture, NavController } from 'ionic-angular';
 declare var Hammer: any
 
 @Directive({
-  selector: '[swipe-back]' // Attribute selector
+  selector: 'ion-content[swipe-back]' // Attribute selector
 })
 export class SwipeBackDirective {
 

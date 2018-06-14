@@ -1,21 +1,15 @@
-import { Directive, HostListener, ChangeDetectorRef, Self, Optional } from '@angular/core';
+import { Directive, HostListener, Self, Optional } from '@angular/core';
 import { TextInput } from 'ionic-angular';
 
-/**
- * Generated class for the InputNumDirective directive.
- *
- * See https://angular.io/api/core/Directive for more info on Angular
- * Directives.
- */
+
+
 @Directive({
-  selector: '[input-num]' // Attribute selector
+  selector: 'ion-input[input-num]' // Attribute selector
 })
 export class InputNumDirective {
 
 
   constructor(
-    private ref: ChangeDetectorRef,
-    // ion-input
     @Optional() @Self() private textInput: TextInput
   ) {
 

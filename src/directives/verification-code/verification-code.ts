@@ -2,7 +2,7 @@ import { Directive, ElementRef, HostListener, OnDestroy, Input, Output, EventEmi
 
 // 获取验证码指令
 @Directive({
-  selector: '[verificationCode]'
+  selector: 'button[verificationCode],ion-button[verificationCode]'
 })
 export class VerificationCodeDirective implements OnInit,OnDestroy {
 
