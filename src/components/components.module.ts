@@ -6,7 +6,7 @@ import { RichTextComponent } from './rich-text/rich-text';
 import { ValidatorsModule } from '../validators/validators.module';
 
 // 常用共享模块
-const COMMON = [
+const Modules = [
   DirectivesModule,
   PipesModule,
   ValidatorsModule
@@ -19,11 +19,11 @@ const COMMON = [
   ],
   imports: [
     IonicModule,
-    ...COMMON
+    ...Modules
   ],
   exports: [
     RichTextComponent,
-    ...COMMON
+    ...Modules
   ]
 })
 export class ComponentsModule { }

@@ -8,33 +8,33 @@ import { InputNumDirective } from './input-num/input-num';
 import { TextSpilloverDirective } from './text-spillover/text-spillover';
 import { AutoFocusDirective } from './auto-focus/auto-focus';
 import { TabClickDirective } from './tab-click/tab-click.directive';
+import { AutoHeightDirective } from './auto-height/auto-height';
+import { KeyboardHideDirective } from './keyboard-hide/keyboard-hide';
 
-
+// 指令
+const directives = [
+  SlidesInteractionDirective,
+  BeginRefreshDirective,
+  SwipeBackDirective,
+  VerificationCodeDirective,
+  InputNumDirective,
+  TextSpilloverDirective,
+  AutoFocusDirective,
+  TabClickDirective,
+  AutoHeightDirective,
+  KeyboardHideDirective
+];
 
 
 @NgModule({
   declarations: [
-    SlidesInteractionDirective,
-    BeginRefreshDirective,
-    SwipeBackDirective,
-    VerificationCodeDirective,
-    InputNumDirective,
-    TextSpilloverDirective,
-    AutoFocusDirective,
-    TabClickDirective
+    ...directives
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    SlidesInteractionDirective,
-    BeginRefreshDirective,
-    SwipeBackDirective,
-    VerificationCodeDirective,
-    InputNumDirective,
-    TextSpilloverDirective,
-    AutoFocusDirective,
-    TabClickDirective
+    ...directives
   ]
 })
 export class DirectivesModule { }
