@@ -23,6 +23,11 @@ export class CalendarComponent implements OnInit, ControlValueAccessor {
 
   @ViewChild(Slides) slides: Slides;
 
+
+  get activeIndex(): number {
+    return this.slides ? this.slides.getActiveIndex() : 1;
+  }
+
   private _startWeekDay: 'Sunday' | 'Monday' = 'Sunday';
 
 
@@ -124,6 +129,8 @@ export class CalendarComponent implements OnInit, ControlValueAccessor {
     }
 
 
+
+
   }
 
 
@@ -135,6 +142,11 @@ export class CalendarComponent implements OnInit, ControlValueAccessor {
       this.isInit = false;
       return;
     };
+
+
+    // 先锁住slide
+    this.slides.onlyExternal = true;
+    this.slides.shortSwipes = false;
 
 
     // 复制当前日历数据
@@ -169,13 +181,6 @@ export class CalendarComponent implements OnInit, ControlValueAccessor {
 
     this.slides.slideTo(1, 0, false);
 
-    // 先锁住slide
-    this.slides.lockSwipes(true);
-
-    setTimeout(() => {
-      // 解锁slide
-      this.slides.lockSwipes(false);
-    }, 300);
 
     // 不能小于1970-01-01
     if (moment('1970-01-01').isAfter(this.currentDate)) {
@@ -232,10 +237,15 @@ export class CalendarComponent implements OnInit, ControlValueAccessor {
 
         // 判断月份是否一致
         const sameMonth = moment(val).isSame(this.currentDate, 'month');
+
+
+
+
         if (sameMonth) {
           this.dates[1].set('date', moment(val).date());
           this.currentDate = this.dates[1].format('YYYY-MM-DD');
-        } else {
+        }
+        else {
 
           this.initDate(moment(val))
         }

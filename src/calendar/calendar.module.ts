@@ -3,6 +3,7 @@ import { CalendarComponent } from './calendar';
 import { IonicModule } from 'ionic-angular';
 import { CalendarMonthComponent } from './calendar-month/calendar-month';
 import { CalendarDayComponent } from './calendar-day/calendar-day';
+import { LockSlidesDirective } from './lock-slides.directive';
 
 @NgModule({
   imports: [
@@ -11,8 +12,9 @@ import { CalendarDayComponent } from './calendar-day/calendar-day';
   declarations: [
     CalendarComponent,
     CalendarMonthComponent,
-    CalendarDayComponent
-  ],
+    CalendarDayComponent,
+    LockSlidesDirective
+],
   exports: [
     CalendarComponent
   ]
