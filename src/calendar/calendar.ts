@@ -133,6 +133,17 @@ export class CalendarComponent implements OnInit, ControlValueAccessor {
 
   }
 
+  willChange() {
+
+    // 防止初始化时候发起事件
+    if (!this.isInit) {
+      // 先锁住手势滑动slide
+      this.slides.onlyExternal = true;
+      this.slides.shortSwipes = false;
+    }
+
+  }
+
 
   // page ： -1 或者 1 后退、前进
   changePage(page: number) {
@@ -144,7 +155,7 @@ export class CalendarComponent implements OnInit, ControlValueAccessor {
     };
 
 
-    // 先锁住slide
+    // 锁住手势滑动slide
     this.slides.onlyExternal = true;
     this.slides.shortSwipes = false;
 

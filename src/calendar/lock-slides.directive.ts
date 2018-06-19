@@ -17,7 +17,7 @@ export class LockSlidesDirective implements OnChanges {
 
     if (this.enableSwipe === 1) {
 
-      // 解锁slide
+      // 解锁手势滑动slide
       this.slides.onlyExternal = false;
       this.slides.shortSwipes = true;
 
