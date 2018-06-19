@@ -1,3 +1,6 @@
+// rxJS操作符
+import './rxjs/rxjs-operators';
+
 import { NgModule, SkipSelf, Optional } from '@angular/core';
 import { ActionSheetService } from './common/action-sheet.service';
 import { AlertService } from './common/alert.service';
