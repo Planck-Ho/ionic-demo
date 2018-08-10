@@ -165,6 +165,10 @@ export class CalendarComponent implements OnInit, ControlValueAccessor {
     }
   }
 
+  trackByFn(index: number, date: Moment) {
+    return date.format('YYYY-MM-DD');
+  }
+
   // page ： -1 或者 1 后退、前进
   changePage(page: number) {
     // 防止初始化时候发起事件

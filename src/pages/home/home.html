@@ -2,9 +2,9 @@
 
   <ion-navbar>
     <ion-buttons start>
-        <button ion-button (click)="today()">
-            今天
-          </button>
+      <button ion-button (click)="today()">
+        今天
+      </button>
     </ion-buttons>
     <ion-title>{{date}}</ion-title>
   </ion-navbar>
@@ -14,7 +14,7 @@
 
 <ion-content>
 
-  <calendar startWeekDay="Monday" [schedules]="scheduleDates" [(ngModel)]="date"></calendar>
+  <calendar [schedules]="scheduleDates" [(ngModel)]="date"></calendar>
 
 
 </ion-content>

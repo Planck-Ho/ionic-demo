@@ -26,6 +26,10 @@ export class CalendarMonthComponent implements OnInit {
     this.initViews(this.dateMonth);
   }
 
+  trackByFn(index: number, date: string) {
+    return date;
+  }
+
   changeDate(date: string) {
     this.onSelect.emit(date);
   }

@@ -19,7 +19,7 @@
 <div *ngIf="!!dates.length">
   <ion-slides [lock-slides]="activeIndex" (ionSlideWillChange)="willChange()" [initialSlide]="1" (ionSlidePrevEnd)="changePage(-1)"
     (ionSlideNextEnd)="changePage(1)">
-    <ion-slide *ngFor="let item of dates">
+    <ion-slide *ngFor="let item of dates;trackBy: trackByFn">
       <calendar-month [dateMonth]="item" [startWeekDay]="startWeekDay" (onSelect)="select($event)"></calendar-month>
     </ion-slide>
   </ion-slides>
