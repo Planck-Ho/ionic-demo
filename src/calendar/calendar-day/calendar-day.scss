@@ -1,4 +1,6 @@
 calendar-day {
+  $default: color($colors, primary);
+
   .calendar-day {
     width: (100vw / 7);
     height: (100vw / 7);
@@ -20,13 +22,10 @@ calendar-day {
       width: 0.5rem;
       height: 0.5rem;
       border-radius: 50%;
-      background: color($colors, primary);
     }
   }
-
-
   .isToday {
-    color: color($colors, primary);
+    color: $default;
     font-weight: bold;
   }
   .isCurrentMonth {
@@ -34,9 +33,9 @@ calendar-day {
     color: #000;
   }
   div.isSelectDay {
-    background: color($colors, primary);
-    border-color: color($colors, primary);
-    >span{
+    background-color: $default;
+    border-color: $default;
+    >span {
       color: #fff;
     }
   }

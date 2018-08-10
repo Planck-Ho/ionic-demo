@@ -16,6 +16,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class TabsPage {
 
   tab1Root: string = 'HomePage';
+  tab2Root: string = 'CalendarSlidesPage';
 
   constructor(
     public navCtrl: NavController,

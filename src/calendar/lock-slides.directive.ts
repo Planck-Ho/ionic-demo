@@ -5,25 +5,16 @@ import { Slides } from 'ionic-angular';
   selector: 'ion-slides[lock-slides]'
 })
 export class LockSlidesDirective implements OnChanges {
+  @Input('lock-slides')
+  private enableSwipe: number;
 
-  @Input('lock-slides') enableSwipe: number;
-
-  constructor(
-    @Self() private slides: Slides
-  ) { }
+  constructor(@Self() private slides: Slides) {}
 
   ngOnChanges(): void {
-
-
     if (this.enableSwipe === 1) {
-
       // 解锁手势滑动slide
       this.slides.onlyExternal = false;
       this.slides.shortSwipes = true;
-
     }
-
-
   }
-
 }

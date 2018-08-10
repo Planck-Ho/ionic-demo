@@ -20,7 +20,10 @@
   <ion-slides [lock-slides]="activeIndex" (ionSlideWillChange)="willChange()" [initialSlide]="1" (ionSlidePrevEnd)="changePage(-1)"
     (ionSlideNextEnd)="changePage(1)">
     <ion-slide *ngFor="let item of dates">
-      <calendar-month [schedules]="schedules" [dateMonth]="item" [startWeekDay]="startWeekDay" (onSelect)="select($event)"></calendar-month>
+      <calendar-month [dateMonth]="item" [startWeekDay]="startWeekDay" (onSelect)="select($event)"></calendar-month>
     </ion-slide>
   </ion-slides>
 </div>
+
+<ion-datetime (ionBlur)="selectDate($event)" [max]="maxDate" doneText="確定" cancelText="取消" displayFormat="YYYY-MM-DD" min="1970"
+  style="display: none;" [ngModel]="currentDate"></ion-datetime>

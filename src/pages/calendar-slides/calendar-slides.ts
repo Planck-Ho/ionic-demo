@@ -11,15 +11,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-calendar-slides',
-  templateUrl: 'calendar-slides.html',
+  templateUrl: 'calendar-slides.html'
 })
 export class CalendarSlidesPage {
+  date: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CalendarSlidesPage');
   }
-
 }

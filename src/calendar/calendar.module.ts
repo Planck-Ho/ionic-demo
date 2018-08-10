@@ -1,22 +1,20 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CalendarComponent } from './calendar';
 import { IonicModule } from 'ionic-angular';
 import { CalendarMonthComponent } from './calendar-month/calendar-month';
 import { CalendarDayComponent } from './calendar-day/calendar-day';
 import { LockSlidesDirective } from './lock-slides.directive';
+import { CalendarController } from './calendar-controller';
 
 @NgModule({
-  imports: [
-    IonicModule
-  ],
+  imports: [IonicModule],
   declarations: [
     CalendarComponent,
     CalendarMonthComponent,
     CalendarDayComponent,
     LockSlidesDirective
-],
-  exports: [
-    CalendarComponent
-  ]
+  ],
+  providers: [CalendarController],
+  exports: [CalendarComponent]
 })
-export class CalendarModule { }
+export class CalendarModule {}
