@@ -131,6 +131,28 @@ export class ToolService {
 
   }
 
+  // 路径转换
+  toFileUri(path: string): string {
+
+    return path.startsWith('file://') ? path : `file://${path}`;
+
+  }
+
+  getFileName(path: string, haveSuffix: boolean = true): string {
+    const p = path.split(/\//);
+    const fileName = p[p.length - 1];
+    const name = fileName.split('.')[0]
+    return haveSuffix ? fileName : name;
+  }
+
+  // 获取文件后缀
+  getFileSuffix(path: string): string {
+    const index1 = path.lastIndexOf('.');
+    const index2 = path.length;
+    return path.substring(index1 + 1, index2);
+  }
+
+
 
 
   // 读取图片路径,转换成blob
