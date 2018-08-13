@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CalendarComponent } from './calendar';
 import { IonicModule } from 'ionic-angular';
 import { CalendarMonthComponent } from './calendar-month/calendar-month';

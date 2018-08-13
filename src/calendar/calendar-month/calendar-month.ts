@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import moment, { Moment } from 'moment';
-import { CalendarController } from '../calendar-controller';
 
 @Component({
   selector: 'calendar-month',
@@ -20,7 +19,7 @@ export class CalendarMonthComponent implements OnInit {
 
   dates: string[] = [];
 
-  constructor(private calendarCtrl: CalendarController) {}
+  constructor() {}
 
   ngOnInit() {
     this.initViews(this.dateMonth);
