@@ -1,4 +1,10 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  OnDestroy
+} from '@angular/core';
 import moment, { Moment } from 'moment';
 import { CalendarController } from '../calendar-controller';
 
@@ -6,7 +12,7 @@ import { CalendarController } from '../calendar-controller';
   selector: 'calendar-day',
   templateUrl: 'calendar-day.html'
 })
-export class CalendarDayComponent {
+export class CalendarDayComponent implements OnDestroy {
   // 当前显示的日期
   @Input()
   date: string;
@@ -29,10 +35,6 @@ export class CalendarDayComponent {
     return !!this.schedule;
   }
 
-  get isSameActiveMonth(): boolean {
-    return moment(this.calendarCtrl.activeDate()).isSame(this.date, 'month');
-  }
-
   get isToday(): boolean {
     return this.date === moment().format('YYYY-MM-DD');
   }
@@ -42,11 +44,11 @@ export class CalendarDayComponent {
     return this.dateMonth.isSame(this.date, 'month');
   }
 
+  // 当前选中日期
   get isSelectDay(): boolean {
-    // 当前日期
     return (
-      this.isSameActiveMonth &&
-      this.date === this.dateMonth.format('YYYY-MM-DD')
+      this.calendarCtrl.activeDate() === this.date &&
+      this.calendarCtrl.activeDate() === this.dateMonth.format('YYYY-MM-DD')
     );
   }
 
@@ -61,5 +63,9 @@ export class CalendarDayComponent {
     }
 
     this.onSelect.emit(this.date);
+  }
+
+  ngOnDestroy() {
+    this.dateMonth = null;
   }
 }

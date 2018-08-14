@@ -1,11 +1,18 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  EventEmitter,
+  Output,
+  OnDestroy
+} from '@angular/core';
 import moment, { Moment } from 'moment';
 
 @Component({
   selector: 'calendar-month',
   templateUrl: 'calendar-month.html'
 })
-export class CalendarMonthComponent implements OnInit {
+export class CalendarMonthComponent implements OnInit, OnDestroy {
   @Output()
   onSelect = new EventEmitter<string>();
 
@@ -23,6 +30,10 @@ export class CalendarMonthComponent implements OnInit {
 
   ngOnInit() {
     this.initViews(this.dateMonth);
+  }
+
+  ngOnDestroy() {
+    this.dateMonth = null;
   }
 
   trackByFn(index: number, date: string) {
