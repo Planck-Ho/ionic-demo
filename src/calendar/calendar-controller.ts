@@ -1,10 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CalendarComponent } from './calendar';
 
-export interface Schedule {
-  date: string;
-  color: string;
-}
 
 @Injectable()
 export class CalendarController {

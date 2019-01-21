@@ -14,10 +14,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ToolService } from './common/tool.service';
 import { IsDebug } from '@ionic-native/is-debug';
 import { Camera } from '@ionic-native/camera';
-import { ImageResizer } from '@ionic-native/image-resizer';
 import { QRScanner } from '@ionic-native/qr-scanner';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
-import { MobileAccessibility } from '@ionic-native/mobile-accessibility';
 
 
 //native插件
@@ -26,10 +24,8 @@ const NATIVE = [
   SplashScreen,
   IsDebug,
   Camera,
-  ImageResizer,
   QRScanner,
-  ScreenOrientation,
-  MobileAccessibility
+  ScreenOrientation
 ];
 
 

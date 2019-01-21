@@ -1,13 +1,23 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>calendar-slides</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+      <ion-buttons start>
+        <button ion-button (click)="today()">
+          今天
+        </button>
+      </ion-buttons>
+      <ion-title>{{date}}</ion-title>
+      <ion-buttons end>
+        <button ion-button (click)="selectDate()">
+          日期跳转
+        </button>
+      </ion-buttons>
+    </ion-navbar>
 
-</ion-header>
+  </ion-header>
 
 
-<ion-content>
-  <calendar [(ngModel)]="date"></calendar>
-
-</ion-content>
+  <ion-content>
+    <calendar [(ngModel)]="date" (onTap)="tapDate($event)" (onChange)="changeDate($event)" [schedules]="schedules"></calendar>
+    <h5 *ngIf="hasSchedule">{{date}}有日程</h5>
+  </ion-content>

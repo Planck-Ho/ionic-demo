@@ -1,0 +1,22 @@
+page-position-viewer {
+  .scroll-content {
+    margin-top: 0 !important;
+    padding-top: 44px;
+  }
+  ion-header {
+    width: 50% !important;
+  }
+  .toolbar-title-ios {
+    color: #453246 !important;
+  }
+  .bar-button-default-ios {
+    color: #453246 !important;
+  }
+  .header-ios .toolbar-background-ios,
+  .toolbar-background-md,
+  .toolbar-background-wp {
+    border-style: none;
+    background: none;
+    border-color: rgba(0, 0, 0, 0)
+  }
+}

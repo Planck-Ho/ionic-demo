@@ -10,7 +10,8 @@ import {
 import moment, { Moment } from 'moment';
 import { Slides, DateTime } from 'ionic-angular';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { CalendarController, Schedule } from './calendar-controller';
+import { CalendarController } from './calendar-controller';
+import { Schedule } from './calendar.model';
 
 @Component({
   selector: 'calendar',

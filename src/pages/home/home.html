@@ -1,12 +1,8 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-buttons start>
-      <button ion-button (click)="today()">
-        今天
-      </button>
-    </ion-buttons>
-    <ion-title>{{date}}</ion-title>
+
+    <ion-title>首页</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -14,7 +10,18 @@
 
 <ion-content>
 
-  <calendar [schedules]="scheduleDates" [(ngModel)]="date"></calendar>
 
+
+  <ion-list inset>
+    <button ion-item (click)="goPhotoViewer()">
+      图片预览
+    </button>
+    <button ion-item (click)="scanner()">
+      二维码扫描
+    </button>
+    <button ion-item (click)="goGaoDeMap()">
+      高德地图
+    </button>
+  </ion-list>
 
 </ion-content>

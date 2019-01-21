@@ -19,14 +19,33 @@ page-scanner {
   .scroll-content {
     margin-top: 0 !important; // padding-top: 44px;
   }
+  .light {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    color: color($colors,primary);
+    font-size: 1.2rem;
+    ion-icon{
+      width: 5rem;
+      font-size: 5rem;
+    }
 
+    >span{
+      margin-top: 5px;
+    }
+  }
   .qrscanner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: -44px;
     width: 100vw;
     height: calc(100vh + 44px);
     background: transparent;
     border-style: solid;
-    border-color: rgba(0, 0, 0, 0.7);
+    border-color: rgba(0, 0, 0, 0.5);
     border-left-width: 25vw;
     border-right-width: 25vw;
     border-top-width: 65vw;
@@ -39,6 +58,7 @@ page-scanner {
     height: 2px;
     background: red;
     position: absolute;
+    z-index: 10;
     animation: myfirst 4s linear infinite alternate;
   }
   @keyframes myfirst {

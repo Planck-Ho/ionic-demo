@@ -14,3 +14,21 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+// 扫描二维码，设置透明
+.scanner {
+  background: none transparent !important;
+
+  [app-viewport],
+  [overlay-portal],
+  [nav-viewport],
+  [tab-portal],
+  .nav-decor {
+    display: none !important;
+    background: none transparent !important;
+  }
+
+  ion-app.ios {
+    background: none transparent !important;
+  }
+}

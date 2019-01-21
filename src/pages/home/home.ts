@@ -1,10 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import moment from 'moment';
-import {
-  CalendarController,
-  Schedule
-} from '../../calendar/calendar-controller';
+import { ToastService } from './../../core/common/toast.service';
+import { Component, OnInit } from '@angular/core';
+import { IonicPage, NavController, Events } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -12,28 +8,37 @@ import {
   templateUrl: 'home.html'
 })
 export class HomePage {
-  date: string;
+  constructor(
+    private navCtrl: NavController,
+    private events: Events,
+    private toastService: ToastService
+  ) {}
 
-  // 日程安排
-  scheduleDates: Schedule[] = [
-    {
-      date: moment().format('YYYY-MM-DD'),
-      color: '#488aff'
-    },
-    {
-      date: moment()
-        .add('day', 1)
-        .format('YYYY-MM-DD'),
-      color: 'red'
-    }
-  ];
+  goPhotoViewer() {
+    this.navCtrl.push('PhotoViewerPage', {
+      picturePaths: [
+        'assets/imgs/1.jpg',
+        'assets/imgs/2.jpg',
+        'assets/imgs/3.jpg',
+        'assets/imgs/4.jpg'
+      ],
+      initialSlide: 0
+    });
+  }
 
-  constructor(private calendarCtrl: CalendarController) {}
+  scanner() {
+    this.navCtrl.push('ScannerPage');
+    this.events.subscribe('scanned', code => {
+      if (code) this.toastService.presentToast(`code:${code}`);
+    });
+  }
 
-  ionViewDidLoad() {}
-
-  today() {
-    this.date = moment().format('YYYY-MM-DD');
-    // this.calendarCtrl.selectDate();
+  goGaoDeMap() {
+    this.navCtrl.push('PositionViewerPage', {
+      // 纬度
+      latitude: 39.916527,
+      // 经度
+      longitude: 116.397128
+    });
   }
 }
