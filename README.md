@@ -5,7 +5,7 @@
    <img width="400" src="https://github.com/hwenlong/ionic-demo/blob/master/src/assets/demo/calendar.png">
 </p>
 
-#  模块
+# 模块
 
 - [图片预览](#positionViewer)
 - [二维码扫描](#scanner)
@@ -18,7 +18,7 @@
 
 全屏显示图片，滑动切换、对图片放大、平移。
 
-###  页面预览
+### 页面预览
 
 <p align="center">
    <img width="400" src="https://github.com/hwenlong/ionic-demo/blob/master/src/assets/demo/photo-viewer1.png">
@@ -55,19 +55,19 @@ goPhotoViewer() {
 
 ```
 
-### 参数说明
-| Name | Type | Default | Description |
+### 参数说明
+| Name | Type | Default | Description |
 | ----- | ----- | --------- | ----------- |
 | picturePaths | string[] | [] |  图片的地址 |
 | initialSlide | number | 0 |  初始化显示图片的  下标|
 
 ## <span id="scanner">二维码扫描</span>
 
-###  概述
+### 概述
 
- 使用摄像头扫描二维码，可以使用闪光灯。
+使用摄像头扫描二维码，可以使用闪光灯。
 
-###  页面预览
+### 页面预览
 
 <p align="center">
    <img width="400" src="https://github.com/hwenlong/ionic-demo/blob/master/src/assets/demo/scanner.png">
@@ -75,7 +75,7 @@ goPhotoViewer() {
 
 ### 依赖
 
- 安装 QR Scanner 插件，详细[文档](https://ionicframework.com/docs/native/qr-scanner/)
+安装 QR Scanner插件，详细[文档](https://ionicframework.com/docs/native/qr-scanner/)
 
 ```bash
 
@@ -85,7 +85,7 @@ npm install --save @ionic-native/qr-scanner
 
 ```
 
-
+
 在 app.scss 添加
 
 ```scss
@@ -128,7 +128,7 @@ scanner() {
 
 ### 概述
 
-通过经纬度，标记  地点在地图上的位置
+通过经纬度，标记地点在地图上的位置
 
 ### 页面预览
 
@@ -175,9 +175,9 @@ goGaoDeMap() {
 
 ## 概述
 
- 一个日历组件，滑动切换、日期跳转、显示日程安排
+一个日历组件，滑动切换、日期跳转、显示日程安排
 
-###  页面预览
+### 页面预览
 
 <p align="center">
    <img width="400" src="https://github.com/hwenlong/ionic-demo/blob/master/src/assets/demo/calendar.png">
@@ -229,7 +229,7 @@ export class MyPage {
 }
 ```
 
-####  显示日程
+#### 显示日程
 
 ```html
 <calendar
@@ -307,24 +307,24 @@ export class MyPage {
 
 #### 输入属性
 
-| Name         | Type       | Default | Description  |
+| Name         | Type       | Default | Description  |
 | ------------ | ---------- | ------- | ------------ |
 | schedules    | Schedule[] | null    | 日程安排数据 |
 | startWeekDay | StartDate  | Sunday  | 一周的开始日 |
 
-####  输出事件
+#### 输出事件
 
-| Name     | Description              |
+| Name     | Description              |
 | -------- | ------------------------ |
 | onChange | 日期改变的时候触发的事件 |
 | onTap    | 点击当前日期触发的事件   |
 
 #### Schedule
 
-| Name         | Type       | Default | Description  |
+| Name         | Type       | Default | Description  |
 | ------------ | ---------- | ------- | ------------ |
 | date    | string |   无  | 日程时间 YYYY-MM-DD格式 |
 | color | string  | 无  | 日程标记颜色 如：#488aff |
 
 #### StartDate
-一周的开始日，取值 Sunday 或者 Monday 
+一周的开始日，取值 Sunday 或者 Monday 
