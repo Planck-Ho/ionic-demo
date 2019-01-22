@@ -11,10 +11,171 @@
 
 # 模块
 
+- [日程表](#calendar)
 - [图片预览](#positionViewer)
 - [二维码扫描](#scanner)
 - [地理位置展示](#positionViewer)
-- [日程表](#calendar)
+
+## <span id="calendar">日程表</span>
+
+## 概述
+
+一个日历组件，滑动切换、日期跳转、显示日程安排
+
+### 页面预览
+
+<p align="center">
+   <img width="400" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/calendar.png">
+   <img width="400" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/calendar-gf.gif">
+</p>
+
+### 安装
+
+1. 把 demo/src/calendar 模块拷贝到你的 project/src/pages 目录下
+
+2. 安装 momentjs
+
+```bash
+npm install moment --save
+```
+
+### 用法
+
+在页面模块中引入 CalendarModule 到模块
+
+```typescript
+import { NgModule } from '@angular/core';
+import { CalendarModule } from '../../calendar/calendar.module';
+
+@NgModule({
+  declarations: [
+    ...
+  ],
+  imports: [
+    CalendarModule
+  ]
+})
+export class MyPageModule {}
+```
+
+#### 基本
+
+```html
+<calendar [(ngModel)]="date" (onChange)="changeDate($event)"></calendar>
+```
+
+```typescript
+export class MyPage {
+  date: string;
+
+  constructor() {}
+
+  changeDate(date: string) {
+    console.log(date, '当前日期');
+  }
+}
+```
+
+#### 显示日程
+
+```html
+<calendar
+  [(ngModel)]="date"
+  (onChange)="changeDate($event)"
+  [schedules]="mockSchedules"
+></calendar>
+
+<h5 *ngIf="hasSchedule">{{date}}有日程</h5>
+```
+
+```typescript
+import * as moment from 'moment';
+
+export class MyPage {
+  date: string;
+
+  mockSchedules: Schedule[] = [];
+
+  get hasSchedule(): boolean {
+    return this.mockSchedules.some(item => item.date === this.date);
+  }
+
+  constructor() {}
+
+  ngOnInit() {
+    const date = moment().subtract('d', 1);
+    const colors = ['#488aff', '#32db64', '#f53d3d', '#222'];
+    for (let i = 0; i < 10; i++) {
+      const index = Math.floor(Math.random() * 4);
+      this.mockSchedules.push({
+        date: date.add('d', 1).format('YYYY-MM-DD'),
+        color: colors[index]
+      });
+    }
+  }
+
+  changeDate(date: string) {
+    console.log(date, '当前日期');
+  }
+}
+```
+
+#### 日期跳转
+
+```html
+<calendar [(ngModel)]="date" (onChange)="changeDate($event)"></calendar>
+
+<button ion-button (click)="today()">今天</button>
+
+<button ion-button (click)="selectDate()">日期跳转</button>
+```
+
+```typescript
+import { CalendarController } from '../../calendar/calendar-controller';
+
+export class MyPage {
+  date: string;
+
+  constructor(private calendarCtrl: CalendarController) {}
+
+  today() {
+    this.date = moment().format('YYYY-MM-DD');
+  }
+
+  selectDate() {
+    this.calendarCtrl.selectDate();
+  }
+
+  changeDate(date: string) {
+    console.log(date, '当前日期');
+  }
+}
+```
+
+#### 输入属性
+
+| Name         | Type       | Default | Description  |
+| ------------ | ---------- | ------- | ------------ |
+| schedules    | Schedule[] | null    | 日程安排数据 |
+| startWeekDay | StartDate  | Sunday  | 一周的开始日 |
+
+#### 输出事件
+
+| Name     | Description              |
+| -------- | ------------------------ |
+| onChange | 日期改变的时候触发的事件 |
+| onTap    | 点击当前日期触发的事件   |
+
+#### Schedule
+
+| Name  | Type   | Default | Description              |
+| ----- | ------ | ------- | ------------------------ |
+| date  | string | 无      | 日程时间 YYYY-MM-DD 格式 |
+| color | string | 无      | 日程标记颜色 如：#488aff |
+
+#### StartDate
+
+一周的开始日，取值 Sunday 或者 Monday
 
 ## <span id="positionViewer">图片预览</span>
 
@@ -180,164 +341,3 @@ goGaoDeMap() {
 | --------- | ------ | ------- | ----------- |
 | latitude  | number | null    | 纬度        |
 | longitude | number | null    | 经度        |
-
-## <span id="calendar">日程表</span>
-
-## 概述
-
-一个日历组件，滑动切换、日期跳转、显示日程安排
-
-### 页面预览
-
-<p align="center">
-   <img width="400" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/calendar.png">
-   <img width="400" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/calendar-gf.gif">
-</p>
-
-### 安装
-
-1. 把 demo/src/calendar 模块拷贝到你的 project/src/pages 目录下
-
-2. 安装 momentjs
-
-```bash
-npm install moment --save
-```
-
-### 用法
-
-在页面模块中引入 CalendarModule 到模块
-
-```typescript
-import { NgModule } from '@angular/core';
-import { CalendarModule } from '../../calendar/calendar.module';
-
-@NgModule({
-  declarations: [
-    ...
-  ],
-  imports: [
-    CalendarModule
-  ]
-})
-export class MyPageModule {}
-```
-
-#### 基本
-
-```html
-<calendar [(ngModel)]="date" (onChange)="changeDate($event)"></calendar>
-```
-
-```typescript
-export class MyPage {
-  date: string;
-
-  constructor() {}
-
-  changeDate(date: string) {
-    console.log(date, '当前日期');
-  }
-}
-```
-
-#### 显示日程
-
-```html
-<calendar
-  [(ngModel)]="date"
-  (onChange)="changeDate($event)"
-  [schedules]="mockSchedules"
-></calendar>
-
-<h5 *ngIf="hasSchedule">{{date}}有日程</h5>
-```
-
-```typescript
-import * as moment from 'moment';
-
-export class MyPage {
-  date: string;
-
-  mockSchedules: Schedule[] = [];
-
-  get hasSchedule(): boolean {
-    return this.mockSchedules.some(item => item.date === this.date);
-  }
-
-  constructor() {}
-
-  ngOnInit() {
-    const date = moment().subtract('d', 1);
-    const colors = ['#488aff', '#32db64', '#f53d3d', '#222'];
-    for (let i = 0; i < 10; i++) {
-      const index = Math.floor(Math.random() * 4);
-      this.mockSchedules.push({
-        date: date.add('d', 1).format('YYYY-MM-DD'),
-        color: colors[index]
-      });
-    }
-  }
-
-  changeDate(date: string) {
-    console.log(date, '当前日期');
-  }
-}
-```
-
-#### 日期跳转
-
-```html
-<calendar [(ngModel)]="date" (onChange)="changeDate($event)"></calendar>
-
-<button ion-button (click)="today()">今天</button>
-
-<button ion-button (click)="selectDate()">日期跳转</button>
-```
-
-```typescript
-import { CalendarController } from '../../calendar/calendar-controller';
-
-export class MyPage {
-  date: string;
-
-  constructor(private calendarCtrl: CalendarController) {}
-
-  today() {
-    this.date = moment().format('YYYY-MM-DD');
-  }
-
-  selectDate() {
-    this.calendarCtrl.selectDate();
-  }
-
-  changeDate(date: string) {
-    console.log(date, '当前日期');
-  }
-}
-```
-
-#### 输入属性
-
-| Name         | Type       | Default | Description  |
-| ------------ | ---------- | ------- | ------------ |
-| schedules    | Schedule[] | null    | 日程安排数据 |
-| startWeekDay | StartDate  | Sunday  | 一周的开始日 |
-
-#### 输出事件
-
-| Name     | Description              |
-| -------- | ------------------------ |
-| onChange | 日期改变的时候触发的事件 |
-| onTap    | 点击当前日期触发的事件   |
-
-#### Schedule
-
-| Name  | Type   | Default | Description              |
-| ----- | ------ | ------- | ------------------------ |
-| date  | string | 无      | 日程时间 YYYY-MM-DD 格式 |
-| color | string | 无      | 日程标记颜色 如：#488aff |
-
-#### StartDate
-
-一周的开始日，取值 Sunday 或者 Monday
