@@ -1,4 +1,8 @@
-# 基于 ionic3 搭建的框架
+# ionic2/3 demo
+
+- 这个 demo 是在 ionic 开发中用到的一些常用的模块/组件，还有一些实战中会用到的指令、管道、工具函数。
+- 模块：图片预览、二维码扫描、地理位置展示、日程表。
+  <!-- - 实战经验：处理安卓返回键、实现页面主动下拉刷新、压缩图片/视频文件等 -->
 
 <p align="center">
    <img width="400" src="https://github.com/hwenlong/ionic-demo/blob/master/src/assets/demo/home.png">
@@ -25,9 +29,11 @@
    <img width="400" src="https://github.com/hwenlong/ionic-demo/blob/master/src/assets/demo/photo-viewer2.png">
 </p>
 
-### 依赖
+### 安装
 
-在 index.html 引入 Swiper
+1. 把 demo/src/pages/photo-viewer 模块拷贝到你的 project/src/pages 目录下
+
+2. 在 index.html 引入 Swiper
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/js/swiper.min.js"></script>
@@ -56,10 +62,11 @@ goPhotoViewer() {
 ```
 
 ### 参数说明
-| Name | Type | Default | Description |
-| ----- | ----- | --------- | ----------- |
-| picturePaths | string[] | [] |  图片的地址 |
-| initialSlide | number | 0 |  初始化显示图片的  下标|
+
+| Name         | Type     | Default | Description          |
+| ------------ | -------- | ------- | -------------------- |
+| picturePaths | string[] | []      | 图片的地址           |
+| initialSlide | number   | 0       | 初始化显示图片的下标 |
 
 ## <span id="scanner">二维码扫描</span>
 
@@ -73,9 +80,11 @@ goPhotoViewer() {
    <img width="400" src="https://github.com/hwenlong/ionic-demo/blob/master/src/assets/demo/scanner.png">
 </p>
 
-### 依赖
+### 安装
 
-安装 QR Scanner插件，详细[文档](https://ionicframework.com/docs/native/qr-scanner/)
+1. 把 demo/src/pages/scanner 模块拷贝到你的 project/src/pages 目录下
+
+2. 安装 QR Scanner 插件，详细[文档](https://ionicframework.com/docs/native/qr-scanner/)
 
 ```bash
 
@@ -85,8 +94,7 @@ npm install --save @ionic-native/qr-scanner
 
 ```
 
-
-在 app.scss 添加
+3. 在 app.scss 添加
 
 ```scss
 .scanner {
@@ -136,9 +144,11 @@ scanner() {
    <img width="400" src="https://github.com/hwenlong/ionic-demo/blob/master/src/assets/demo/gaode.png">
 </p>
 
-### 依赖
+### 安装
 
-在 index.html 引入高德地图 api
+1. 把 demo/src/pages/position-viewer 模块拷贝到你的 project/src/pages 目录下
+
+2. 在 index.html 引入高德地图 api
 
 ```html
 <script
@@ -164,7 +174,7 @@ goGaoDeMap() {
 
 ```
 
-### 参数说明
+###参数说明
 
 | Name      | Type   | Default | Description |
 | --------- | ------ | ------- | ----------- |
@@ -184,9 +194,11 @@ goGaoDeMap() {
    <img width="400" src="https://github.com/hwenlong/ionic-demo/blob/master/src/assets/demo/calendar-gf.gif">
 </p>
 
-### 依赖
+### 安装
 
-安装 momentjs
+1. 把 demo/src/calendar 模块拷贝到你的 project/src/pages 目录下
+
+2. 安装 momentjs
 
 ```bash
 npm install moment --save
@@ -194,7 +206,7 @@ npm install moment --save
 
 ### 用法
 
-引入 CalendarModule 到模块
+在页面模块中引入 CalendarModule 到模块
 
 ```typescript
 import { NgModule } from '@angular/core';
@@ -321,10 +333,11 @@ export class MyPage {
 
 #### Schedule
 
-| Name         | Type       | Default | Description  |
-| ------------ | ---------- | ------- | ------------ |
-| date    | string |   无  | 日程时间 YYYY-MM-DD格式 |
-| color | string  | 无  | 日程标记颜色 如：#488aff |
+| Name  | Type   | Default | Description              |
+| ----- | ------ | ------- | ------------------------ |
+| date  | string | 无      | 日程时间 YYYY-MM-DD 格式 |
+| color | string | 无      | 日程标记颜色 如：#488aff |
 
 #### StartDate
-一周的开始日，取值 Sunday 或者 Monday 
+
+一周的开始日，取值 Sunday 或者 Monday
