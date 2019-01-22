@@ -1,12 +1,12 @@
 # ionic2/3 demo
 
-- 这个 demo 是在 ionic 开发中用到的一些常用的模块/组件，还有一些实战中会用到的指令、管道、工具函数。
+- 这个 demo 包含一些常用的模块/组件，还有实战中会用到的指令、管道、工具函数。
 - 模块：图片预览、二维码扫描、地理位置展示、日程表。
   <!-- - 实战经验：处理安卓返回键、实现页面主动下拉刷新、压缩图片/视频文件等 -->
 
 <p align="center">
-   <img width="400" src="https://github.com/hwenlong/ionic-demo/blob/master/src/assets/demo/home.png">
-   <img width="400" src="https://github.com/hwenlong/ionic-demo/blob/master/src/assets/demo/calendar.png">
+   <img width="400" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/home.png">
+   <img width="400" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/calendar.png">
 </p>
 
 # 模块
@@ -25,8 +25,8 @@
 ### 页面预览
 
 <p align="center">
-   <img width="400" src="https://github.com/hwenlong/ionic-demo/blob/master/src/assets/demo/photo-viewer1.png">
-   <img width="400" src="https://github.com/hwenlong/ionic-demo/blob/master/src/assets/demo/photo-viewer2.png">
+   <img width="400" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/photo-viewer1.png">
+   <img width="400" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/photo-viewer2.png">
 </p>
 
 ### 安装
@@ -77,7 +77,7 @@ goPhotoViewer() {
 ### 页面预览
 
 <p align="center">
-   <img width="400" src="https://github.com/hwenlong/ionic-demo/blob/master/src/assets/demo/scanner.png">
+   <img width="400" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/scanner.png">
 </p>
 
 ### 安装
@@ -141,7 +141,7 @@ scanner() {
 ### 页面预览
 
 <p align="center">
-   <img width="400" src="https://github.com/hwenlong/ionic-demo/blob/master/src/assets/demo/gaode.png">
+   <img width="400" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/gaode.png">
 </p>
 
 ### 安装
@@ -176,7 +176,7 @@ goGaoDeMap() {
 
 ###参数说明
 
-| Name      | Type   | Default | Description |
+| Name      | Type   | Default | Description |
 | --------- | ------ | ------- | ----------- |
 | latitude  | number | null    | 纬度        |
 | longitude | number | null    | 经度        |
@@ -190,8 +190,8 @@ goGaoDeMap() {
 ### 页面预览
 
 <p align="center">
-   <img width="400" src="https://github.com/hwenlong/ionic-demo/blob/master/src/assets/demo/calendar.png">
-   <img width="400" src="https://github.com/hwenlong/ionic-demo/blob/master/src/assets/demo/calendar-gf.gif">
+   <img width="400" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/calendar.png">
+   <img width="400" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/calendar-gf.gif">
 </p>
 
 ### 安装
