@@ -18,6 +18,8 @@
 
 
   <ion-content>
+
     <calendar [(ngModel)]="date" (onTap)="tapDate($event)" (onChange)="changeDate($event)" [schedules]="schedules"></calendar>
+
     <h5 *ngIf="hasSchedule">{{date}}有日程</h5>
   </ion-content>

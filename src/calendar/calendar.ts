@@ -11,7 +11,7 @@ import moment, { Moment } from 'moment';
 import { Slides, DateTime } from 'ionic-angular';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { CalendarController } from './calendar-controller';
-import { Schedule } from './calendar.model';
+import { Schedule, StartDate } from './calendar.model';
 
 @Component({
   selector: 'calendar',
@@ -48,7 +48,7 @@ export class CalendarComponent implements OnInit, ControlValueAccessor {
     return this.slides ? this.slides.getActiveIndex() : 1;
   }
 
-  private _startWeekDay: 'Sunday' | 'Monday' = 'Sunday';
+  private _startWeekDay: StartDate = 'Sunday';
 
   // 一周的开始时间、星期天或星期一
   @Input()

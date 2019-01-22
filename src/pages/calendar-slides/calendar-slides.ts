@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
 import { CalendarController } from '../../calendar/calendar-controller';
-import moment from 'moment';
+import * as moment from 'moment';
 import { Schedule } from '../../calendar/calendar.model';
 
 @IonicPage()
