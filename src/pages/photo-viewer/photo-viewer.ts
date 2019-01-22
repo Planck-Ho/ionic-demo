@@ -1,10 +1,10 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import {
   IonicPage,
   NavController,
   NavParams,
-  ViewController,
-  Content
+  Content,
+  Tabs
 } from 'ionic-angular';
 
 declare var Swiper;
@@ -19,12 +19,19 @@ export class PhotoViewerPage {
   private content: Content;
 
   initialSlide: number;
-  // 圖片
   picturePaths: string[] = [];
 
   constructor(navParams: NavParams, private navCtrl: NavController) {
     this.initialSlide = navParams.get('initialSlide') || 0;
     this.picturePaths = navParams.get('picturePaths');
+  }
+
+  ionViewWillEnter() {
+    (this.navCtrl.parent as Tabs).setTabbarHidden(true);
+  }
+
+  ionViewWillLeave() {
+    (this.navCtrl.parent as Tabs).setTabbarHidden(false);
   }
 
   ionViewDidLoad() {
@@ -33,8 +40,8 @@ export class PhotoViewerPage {
     this.content.setElementClass('swiper-container', true);
 
     new Swiper(this.content.getScrollElement(), {
-      initialSlide: this.initialSlide, //初始化显示第几个
-      zoom: true, //双击,手势缩放
+      initialSlide: this.initialSlide,
+      zoom: true,
       pagination: {
         el: '.swiper-pagination',
         type: 'fraction'

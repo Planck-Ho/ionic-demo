@@ -1,5 +1,5 @@
 import { ToastService } from './../../core/common/toast.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicPage, NavController, Events } from 'ionic-angular';
 
 @IonicPage()
@@ -28,7 +28,7 @@ export class HomePage {
 
   scanner() {
     this.navCtrl.push('ScannerPage');
-    this.events.subscribe('scanned', code => {
+    this.events.subscribe('scan-completed', code => {
       if (code) this.toastService.presentToast(`code:${code}`);
     });
   }

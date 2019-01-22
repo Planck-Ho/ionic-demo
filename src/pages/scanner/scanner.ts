@@ -50,8 +50,8 @@ export class ScannerPage {
     if (this.scanSub) this.scanSub.unsubscribe();
     this.qrScanner.hide();
     this.qrScanner.destroy();
-    this.events.publish('scanned', null);
-    this.events.unsubscribe('scanned');
+    this.events.publish('scan-completed', null);
+    this.events.unsubscribe('scan-completed');
   }
 
   private async init(): Promise<void> {
@@ -60,7 +60,7 @@ export class ScannerPage {
 
       if (this.qrScannerStatus.authorized) {
         this.scanSub = this.qrScanner.scan().subscribe((text: string) => {
-          this.events.publish('scanned', text);
+          this.events.publish('scan-completed', text);
 
           let audio = new Audio('assets/audio/scanner.mp3');
 
