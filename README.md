@@ -2,21 +2,23 @@
 
 - 这个 demo 包含一些常用的模块/组件，还有实战中会用到的指令、管道、工具函数。
 - 模块：图片预览、二维码扫描、地理位置展示、日程表。
-  <!-- - 实战经验：处理安卓返回键、实现页面主动下拉刷新、压缩图片/视频文件等 -->
+- 实战经验：[处理安卓返回键](https://juejin.im/post/5c4963af6fb9a049b5072b1b)、实现页面主动下拉刷新、压缩图片/视频文件等
+
+## 效果预览
 
 <p align="center">
-   <img width="400" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/home.png">
-   <img width="400" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/calendar.png">
+   <img width="400" src="https://user-gold-cdn.xitu.io/2019/1/24/1687eb08dbdd6203?w=400&h=716&f=gif&s=1170902">
 </p>
+
 
 # 模块
 
 - [日程表](#calendar)
-- [图片预览](#positionViewer)
+- [图片预览](#photoViewer)
 - [二维码扫描](#scanner)
 - [地理位置展示](#positionViewer)
 
-## <span id="calendar">日程表</span>
+# <span id="calendar">日程表</span>
 
 ## 概述
 
@@ -31,7 +33,7 @@
 
 ### 安装
 
-1. 把 demo/src/calendar 模块拷贝到你的 project/src/pages 目录下
+1. 把 <font color="green">demo/src/calendar</font> 模块拷贝到你的 <font color="green">project/src</font> 目录下
 
 2. 安装 momentjs
 
@@ -177,7 +179,7 @@ export class MyPage {
 
 一周的开始日，取值 Sunday 或者 Monday
 
-## <span id="positionViewer">图片预览</span>
+# <span id="photoViewer">图片预览</span>
 
 ### 概述
 
@@ -192,7 +194,7 @@ export class MyPage {
 
 ### 安装
 
-1. 把 demo/src/pages/photo-viewer 模块拷贝到你的 project/src/pages 目录下
+1. 把 <font color="green">demo/src/pages/photo-viewer</font> 模块拷贝到你的 <font color="green">project/src/pages</font> 目录下
 
 2. 在 index.html 引入 Swiper
 
@@ -243,7 +245,7 @@ goPhotoViewer() {
 
 ### 安装
 
-1. 把 demo/src/pages/scanner 模块拷贝到你的 project/src/pages 目录下
+1. 把 <font color="green">demo/src/pages/scanner</font> 模块拷贝到你的 <font color="green">project/src/pages</font> 目录下
 
 2. 安装 QR Scanner 插件，详细[文档](https://ionicframework.com/docs/native/qr-scanner/)
 
@@ -293,7 +295,7 @@ scanner() {
 
 ```
 
-## <span id="positionViewer">地理位置展示</span>
+# <span id="positionViewer">地理位置展示</span>
 
 ### 概述
 
@@ -307,7 +309,7 @@ scanner() {
 
 ### 安装
 
-1. 把 demo/src/pages/position-viewer 模块拷贝到你的 project/src/pages 目录下
+1. 把 <font color="green">demo/src/pages/position-viewer</font> 模块拷贝到你的 <font color="green">project/src/pages</font> 目录下
 
 2. 在 index.html 引入高德地图 api
 
