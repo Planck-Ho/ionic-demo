@@ -6,10 +6,10 @@
 
 ## 效果预览
 
-<p align="center">
-   <img width="400" src="https://user-gold-cdn.xitu.io/2019/1/24/1687eb08dbdd6203?w=400&h=716&f=gif&s=1170902">
-</p>
-
+ <p align="center">
+   <img width="400" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/home.png">
+   <img width="400" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/calendar.png">
+ </p>
 
 # 模块
 
