@@ -14,7 +14,7 @@
 
 ## 扫一扫下载 App
 
- <img width="400" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/1548386580.png">
+ <img width="200" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/1548386580.png">
 
 ## 经验分享
 
