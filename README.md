@@ -257,7 +257,7 @@ goPhotoViewer() {
 
 ### 安装
 
-1. 把 <font color="green">demo/src/pages/scanner</font> 模块拷贝到你的 <font color="green">project/src/pages</font> 目录下
+1. 把 <font color="green">demo/src/pages/scanner</font> 模块拷贝到你的 <font color="green">project/src/pages</font> 目录下。
 
 2. 安装 QR Scanner 插件，详细[文档](https://ionicframework.com/docs/native/qr-scanner/)
 
@@ -289,6 +289,7 @@ npm install --save @ionic-native/qr-scanner
   }
 }
 ```
+4. 添加扫描成功声音文件，把 <font color="green">demo/assets/audio/scanner.mp3</font> 文件拷贝到你的 <font color="green">project/assets/audio</font> 目录下。（audio目录可能需要自己创建）
 
 ### 用法
 
