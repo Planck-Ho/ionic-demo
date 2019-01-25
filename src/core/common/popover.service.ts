@@ -4,30 +4,17 @@ import { BackService } from './back.service';
 
 @Injectable()
 export class PopoverService {
-
   constructor(
     private popoverCtrl: PopoverController,
-    private backService: BackService,
-
-  ) { }
+    private backService: BackService
+  ) {}
 
   create(component: any, data?: {}, opts?: PopoverOptions): Popover {
-
     const popover = this.popoverCtrl.create(component, data, opts);
 
-
-
-
     popover.onWillDismiss(() => {
-
       this.backService.unsubscribe();
-
-
     });
-
-
-
-
 
     this.backService.subscribe(() => {
       popover.dismiss();
@@ -35,5 +22,4 @@ export class PopoverService {
 
     return popover;
   }
-
 }

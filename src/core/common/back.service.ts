@@ -3,24 +3,18 @@ import { Events } from 'ionic-angular';
 
 @Injectable()
 export class BackService {
-
   private eventName: string[] = [];
-
 
   get state(): boolean {
     return !!this.eventName.length;
   }
 
-  constructor(private events: Events) {
-  }
+  constructor(private events: Events) {}
 
   subscribe(calback: Function) {
-
-
     const eventName = `_back_${this.eventName.length}`;
 
     this.eventName.push(eventName);
-
 
     this.events.subscribe(eventName, calback);
   }
@@ -32,10 +26,7 @@ export class BackService {
     }
   }
 
-
-
   publish() {
-
     this.events.publish(this.eventName[this.eventName.length - 1]);
   }
 
@@ -46,8 +37,4 @@ export class BackService {
 
     this.eventName = [];
   }
-
-
-
-
 }

@@ -2,7 +2,6 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { Keyboard as _Keyboard } from 'ionic-angular';
 import { ToolService } from '../common/tool.service';
 
-
 /*
   详细信息：https://github.com/ionic-team/cordova-plugin-ionic-keyboard
   安装：ionic cordova plugin add cordova-plugin-ionic-keyboard --save
@@ -15,7 +14,6 @@ declare var Keyboard;
 
 @Injectable()
 export class KeyboardService {
-
   didShow = new EventEmitter<number>();
 
   willShow = new EventEmitter<number>();
@@ -24,34 +22,19 @@ export class KeyboardService {
 
   willHide = new EventEmitter<void>();
 
-
-
-
-
-  constructor(
-    private keyboard: _Keyboard,
-    private toolService: ToolService
-  ) {
-
+  constructor(private keyboard: _Keyboard, private toolService: ToolService) {
     if (this.toolService.isDevice()) {
       this.init();
     }
   }
 
-
   // 检测键盘是否弹出
   isOpen(): boolean {
-
-
     if (this.toolService.isDevice()) {
       return Keyboard.isVisible;
-
     } else {
       return this.keyboard.isOpen();
     }
-
-
-
   }
 
   // 隐藏键盘
@@ -63,15 +46,12 @@ export class KeyboardService {
 
   // 显示键盘
   show() {
-
     if (this.toolService.isDevice()) {
       Keyboard.show();
     }
   }
 
   private init() {
-
-
     window.addEventListener('keyboardDidHide', () => {
       this.didHide.emit();
     });
@@ -81,22 +61,10 @@ export class KeyboardService {
     });
 
     window.addEventListener('keyboardWillShow', (ev: any) => {
-
       this.willShow.emit(ev.keyboardHeight);
-
     });
     window.addEventListener('keyboardWillHide', () => {
-
       this.willHide.emit();
-
     });
-
   }
-
-
-
-
-
-
-
 }

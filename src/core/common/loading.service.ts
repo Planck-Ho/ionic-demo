@@ -4,17 +4,13 @@ import { BackService } from './back.service';
 
 @Injectable()
 export class LoadingService {
-
   constructor(
     private loadingCtrl: LoadingController,
-    private backService: BackService,
-
-  ) { }
+    private backService: BackService
+  ) {}
 
   create(opts?: LoadingOptions): Loading {
-
     const loading = this.loadingCtrl.create(opts);
-
 
     loading.onWillDismiss(() => {
       this.backService.unsubscribe();
@@ -28,7 +24,6 @@ export class LoadingService {
   }
 
   default(): Loading {
-
     const loading = this.create({
       spinner: 'crescent'
     });
@@ -44,8 +39,5 @@ export class LoadingService {
     loading.present();
 
     return loading;
-
-}
-
-
+  }
 }

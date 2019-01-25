@@ -16,7 +16,7 @@ import { IsDebug } from '@ionic-native/is-debug';
 import { Camera } from '@ionic-native/camera';
 import { QRScanner } from '@ionic-native/qr-scanner';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
-
+import { AppMinimize } from '@ionic-native/app-minimize';
 
 //native插件
 const NATIVE = [
@@ -25,9 +25,9 @@ const NATIVE = [
   IsDebug,
   Camera,
   QRScanner,
-  ScreenOrientation
+  ScreenOrientation,
+  AppMinimize
 ];
-
 
 // 常用的
 const COMMON = [
@@ -41,13 +41,9 @@ const COMMON = [
   ToolService
 ];
 
-
 // 核心的服務
 @NgModule({
-  providers: [
-    ...NATIVE,
-    ...COMMON
-  ]
+  providers: [...NATIVE, ...COMMON]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() module: CoreModule) {

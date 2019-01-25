@@ -1,8 +1,9 @@
 # ionic2/3 demo
 
-- 这个 demo 包含一些常用的模块/组件，还有实战中会用到的指令、管道、工具函数。
-- 模块：图片预览、二维码扫描、地理位置展示、日程表。
-- 实战经验：[处理安卓返回键](https://juejin.im/post/5c4963af6fb9a049b5072b1b)、实现页面主动下拉刷新、压缩图片/视频文件等
+> 这个 demo 包含一些常用的模块：图片预览、二维码扫描、地理位置展示、日程表，还有实战中会用到的指令、管道、工具函数。
+<!-- - 包含模块：图片预览、二维码扫描、地理位置展示、日程表。 -->
+<!-- - 实战经验：  [处理安卓返回键](https://juejin.im/post/5c4963af6fb9a049b5072b1b)、实现页面主动下拉刷新、压缩图片/视频文件等 -->
+
 
 ## 效果预览
 
@@ -10,6 +11,13 @@
    <img width="400" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/home.png">
    <img width="400" src="https://github.com/hamal-ho/ionic-demo/blob/master/src/assets/demo/calendar.png">
  </p>
+
+ ## 经验分享
+- [安卓返回键的处理](https://juejin.im/post/5c4963af6fb9a049b5072b1b)
+- 自动下拉刷新
+- 压缩图片
+- 压缩视频文件
+
 
 # 模块
 

@@ -8,7 +8,6 @@ import { Config } from './config';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DefaultInterceptor } from '../core/http/default.interceptor';
 import { GlobalModule } from '../providers/global.module';
-// import { CalendarModule } from '../calendar/calendar.module';
 
 @NgModule({
   declarations: [
