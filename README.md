@@ -19,7 +19,7 @@
 ## 经验分享
 
 - [安卓返回键的处理](https://juejin.im/post/5c4963af6fb9a049b5072b1b)
-- 自动下拉刷新
+- [自动下拉刷新](https://juejin.im/post/5c4ac97ef265da61171d117e)
 - 压缩图片
 - 压缩视频文件
 
@@ -350,7 +350,7 @@ goGaoDeMap() {
 
 ```
 
-###参数说明
+### 参数说明
 
 | Name      | Type   | Default | Description |
 | --------- | ------ | ------- | ----------- |
