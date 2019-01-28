@@ -21,7 +21,7 @@
 - [安卓返回键的处理](https://juejin.im/post/5c4963af6fb9a049b5072b1b)
 - [自动下拉刷新](https://juejin.im/post/5c4ac97ef265da61171d117e)
 - [压缩图片](https://juejin.im/post/5c4ea836f265da61746532ee)
-- 压缩视频文件
+- [压缩和上传视频文件](https://juejin.im/post/5c4eb8d16fb9a049b5073470)
 
 # 模块
 
